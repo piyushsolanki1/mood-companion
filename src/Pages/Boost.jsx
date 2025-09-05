@@ -70,7 +70,7 @@ const Boost = () => {
   return (
     <div className="p-4 md:p-6 lg:p-8 max-w-3xl mx-auto space-y-6">
       {/* Header */}
-      <div className="flex items-center">
+      <div className="flex items-center text-gray-600">
         <button
           className="pr-4"
           onClick={() => window.history.back()}
@@ -118,39 +118,50 @@ const Boost = () => {
         </button>
       </div>
 
-      {/* Breathing Techniques */}
-      <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
-        <h2 className="text-lg font-semibold text-gray-700 mb-4">
-          Relaxation Breathing Techniques
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="p-4 border rounded-2xl bg-gray-50">
-            <h1 className="font-medium">4-7-8 Breathing</h1>
-            <ol className="text-sm mt-2 text-gray-600 text-left">
-              <li>1. Inhale for 4 counts</li>
-              <li>2. Hold for 7 counts</li>
-              <li>3. Exhale for 8 counts</li>
-            </ol>
-          </div>
-          <div className="p-4 border rounded-2xl bg-gray-50">
-            <h1 className="font-medium">Box Breathing</h1>
-            <ol className="text-sm mt-2 text-gray-600 text-left">
-              <li>1. Inhale for 4 counts</li>
-              <li>2. Hold for 4 counts</li>
-              <li>3. Exhale for 4 counts</li>
-              <li>4. Hold for 4 counts</li>
-            </ol>
-          </div>
-          <div className="p-4 border rounded-2xl bg-gray-50">
-            <h1 className="font-medium">Mindful Breathing</h1>
-            <ul className="text-sm mt-2 text-gray-600 text-left">
-              <li>1. Inhale slowly for 4 counts</li>
-              <li>2. Exhale slowly for 6 counts</li>
-              <li>3. Repeat mindfully</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+     {/* Breathing Techniques */}
+<div className="bg-white shadow-lg rounded-2xl p-6 text-center">
+  <h2 className="text-lg font-semibold text-gray-800 mb-4">
+    Relaxation Breathing Techniques
+  </h2>
+  
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    {/* 4-7-8 Breathing */}
+    <div className="p-4 border rounded-2xl bg-gray-50 shadow-sm">
+      <h3 className="text-md font-semibold text-gray-700 mb-2 flex content-start">4-7-8 Breathing</h3>
+      <ul className="text-sm text-gray-600 space-y-1 text-left">
+        <li>1. Inhale for 4 counts</li>
+        <li>2. Hold for 7 counts</li>
+        <li>3. Exhale for 8 counts</li>
+      </ul>
+      {/* <button className="className= mt-4 p-1 bg-transparent text-gray-800 border-1 rounded-lg transition text-sm md:text-base flex justify-center items-center mx-auto w-full hover:bg-gray-200">start</button> */}
+    </div>
+
+    {/* Box Breathing */}
+    <div className="p-4 border rounded-2xl bg-gray-50 shadow-sm">
+      <h3 className="text-md font-semibold text-gray-700 mb-2 flex content-start">Box Breathing</h3>
+      <ul className="text-sm text-gray-600 space-y-1 text-left">
+        <li>1. Inhale for 4 counts</li>
+        <li>2. Hold for 4 counts</li>
+        <li>3. Exhale for 4 counts</li>
+        <li>4. Hold for 4 counts</li>
+      </ul>
+      {/* <button className="className= mt-4 p-1 bg-transparent text-gray-800 border-1 rounded-lg transition text-sm md:text-base flex justify-center items-center mx-auto w-full hover:bg-gray-200">start</button> */}
+    </div>
+
+    {/* Mindful Breathing */}
+    <div className="p-4 border rounded-2xl bg-gray-50 shadow-sm">
+      <h3 className="text-md font-semibold text-gray-700 mb-2 flex content-start">Mindful Breathing</h3>
+      <ul className="text-sm text-gray-600 space-y-1 text-left">
+        <li>1. Inhale slowly for 4 counts</li>
+        <li>2. Exhale slowly for 6 counts</li>
+        <li>3. Repeat mindfully</li>
+      </ul>
+      {/* <button className="className= mt-4 p-1 bg-transparent text-gray-800 border-1 rounded-lg transition text-sm md:text-base flex justify-center items-center mx-auto w-full hover:bg-gray-200" */}
+      {/* >start</button> */}
+    </div>
+  </div>
+</div>
+
 
       {/* Quick Mood Boosters */}
       <div className="bg-white shadow-lg rounded-2xl p-6">
@@ -159,7 +170,7 @@ const Boost = () => {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <button
-            className="flex flex-col items-center justify-center p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition"
+            className="flex flex-col items-center justify-center p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition shadow bg-blue-500  delay-90 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 "
             onClick={() => window.open("https://www.youtube.com/podcasts", "_blank")}
           >
             <PlayCircle className="w-8 h-8 text-yellow-500 mb-2" />
@@ -169,7 +180,7 @@ const Boost = () => {
           </button>
 
           <button
-            className="flex flex-col items-center justify-center p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition"
+            className="flex flex-col items-center justify-center p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition shadow bg-blue-500  delay-90 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 "
             onClick={() =>
               window.open("https://open.spotify.com/genre/relaxation-page", "_blank")
             }
@@ -192,8 +203,8 @@ const Boost = () => {
         ) : (
           <img
             src={animalImage}
-            alt="Cute Animal"
-            className="rounded-xl max-w-xs w-full h-60 object-cover mx-auto shadow-md"
+            alt="Hey cute potato"
+            className="rounded-xl max-w-xs w-full h-60 object-cover mx-auto shadow-md text-gray-600"
           />
         )}
         <h3 className="text-gray-600">

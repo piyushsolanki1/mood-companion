@@ -15,6 +15,8 @@ function App() {
         <Route path="/history" element={<History />} />
         <Route path="/boost" element={<Boost />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/log" element={<LogMood navigateBack={() => window.history.back()} />} />
+
       </Routes>
       <Navigation />
     </div>

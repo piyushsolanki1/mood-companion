@@ -10,13 +10,13 @@ const Navigation = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs sm:text-sm transition-colors ${
+              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 hover:bg-gray-200 rounded-xl p-1 ${
                 isActive ? "text-blue-500" : "text-gray-500"
               }`
             }
           >
             <Home size={22} className="sm:size-6" />
-            <span>Home</span>
+            <span className="font-semibold">Home</span>
           </NavLink>
         </li>
 
@@ -25,13 +25,13 @@ const Navigation = () => {
           <NavLink
             to="/boost"
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs sm:text-sm transition-colors ${
+              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 hover:bg-gray-200 rounded-xl p-1 ${
                 isActive ? "text-blue-500" : "text-gray-500"
               }`
             }
           >
             <Sparkles size={22} className="sm:size-6" />
-            <span>Boost</span>
+            <span className="font-semibold">Boost</span>
           </NavLink>
         </li>
 
@@ -40,13 +40,13 @@ const Navigation = () => {
           <NavLink
             to="/log"
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs sm:text-sm transition-colors ${
+              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 hover:bg-gray-200 rounded-xl p-1 ${
                 isActive ? "text-blue-500" : "text-gray-500"
               }`
             }
           >
-            <PlusIcon size={22} className="sm:size-6" />
-            <span>Log</span>
+            <PlusIcon size={22} className="sm:size-8" />
+            <span className="font-semibold">Log</span>
           </NavLink>
         </li>
 
@@ -55,13 +55,13 @@ const Navigation = () => {
           <NavLink
             to="/history"
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs sm:text-sm transition-colors ${
+              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 hover:bg-gray-200 rounded-xl p-1 ${
                 isActive ? "text-blue-500" : "text-gray-500"
               }`
             }
           >
             <Calendar size={22} className="sm:size-6" />
-            <span>History</span>
+            <span className="font-semibold">History</span>
           </NavLink>
         </li>
 
@@ -72,13 +72,13 @@ const Navigation = () => {
           <NavLink
             to="/settings"
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs sm:text-sm transition-colors ${
+              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 hover:bg-gray-200 rounded-xl p-1 ${
                 isActive ? "text-blue-500" : "text-gray-500"
               }`
             }
           >
             <Settings size={22} className="sm:size-6" />
-            <span>Settings</span>
+            <span className="font-semibold">Settings</span>
           </NavLink>
         </li>
       </ul>
