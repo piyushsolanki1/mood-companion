@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Save, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -20,7 +20,7 @@ const prompts = {
 };
 
 const LogMood = () => {
-  const [selectedMood, setSelectedMood] = useState(3); // Default mood: Neutral
+  const [selectedMood, setSelectedMood] = useState(null); // Start with nothing selected
   const [note, setNote] = useState("");
   const [isSaving, setIsSaving] = useState(false);
 
@@ -92,7 +92,7 @@ const LogMood = () => {
             <motion.button
               key={mood.value}
               onClick={() => setSelectedMood(mood.value)}
-              className={`flex flex-col items-center justify-center p-3 sm:p-4 rounded-full contain-content transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-100${
+              className={`flex flex-col items-center justify-center p-3 sm:p-4 rounded-full contain-content transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 ${
                 selectedMood === mood.value
                   ? "bg-purple-100 border-2 border-purple-400"
                   : "bg-gray-50 hover:bg-gray-100"
@@ -106,58 +106,73 @@ const LogMood = () => {
 
         {/* Mood Label */}
         <div className="mt-2 text-sm text-gray-700 font-semibold ">
-          {selectedMoodObj.label}
+          {selectedMoodObj?.label}
         </div>
       </motion.div>
 
-      {/* Prompt Section */}
-      <motion.div
-        className="bg-gray-50 shadow-md rounded-2xl p-6"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <div className="flex justify-center mb-4 ">
-          <span className="text-5xl transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">{selectedMoodObj.emoji}</span>
-        </div>
-        <h2 className="text-center text-gray-600 text-lg font-medium mb-4">
-          {prompts[selectedMood]}
-        </h2>
-        <textarea
-          value={note}
-          onChange={(e) => setNote(e.target.value)}
-          placeholder="Write about your day..."
-          className="text-gray-500 w-full p-3 border-2 rounded-xl focus:ring-2 focus:ring-purple-400 resize-none min-h-[120px]"
-        />
-      </motion.div>
+      {/* Show this only when mood is selected */}
+      <AnimatePresence>
+        {selectedMood && (
+          <>
+            {/* Prompt + Textarea */}
+            <motion.div
+              className="bg-gray-50 shadow-md rounded-2xl p-6"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="flex justify-center mb-4 ">
+                <span className="text-5xl transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                  {selectedMoodObj.emoji}
+                </span>
+              </div>
+              <h2 className="text-center text-gray-600 text-lg font-medium mb-4">
+                {prompts[selectedMood]}
+              </h2>
+              <textarea
+                value={note}
+                onChange={(e) => setNote(e.target.value)}
+                placeholder="Write about your day..."
+                className="text-gray-500 w-full p-3 border-2 rounded-xl focus:ring-2 focus:ring-purple-400 resize-none min-h-[120px]"
+              />
+            </motion.div>
 
-      {/* Save Button */}
-      <div className="bg-white shadow-2xl rounded-2xl p-6 text-center transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-100">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <button
-            onClick={handleSave}
-            disabled={isSaving}
-            className={`w-full flex justify-center items-center gap-2 py-3 text-white rounded-xl transition ${
-              isSaving
-                ? "bg-purple-400 cursor-not-allowed"
-                : "bg-purple-500 hover:bg-purple-600"
-            }`}
-          >
-            {isSaving ? (
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+            {/* Save Button */}
+            <motion.div
+              className="bg-white shadow-2xl rounded-2xl p-6 text-center transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-100"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <button
+                onClick={handleSave}
+                disabled={isSaving}
+                className={`w-full flex justify-center items-center gap-2 py-3 text-white rounded-xl transition ${
+                  isSaving
+                    ? "bg-purple-400 cursor-not-allowed"
+                    : "bg-purple-500 hover:bg-purple-600"
+                }`}
               >
-                <Save className="w-5 h-5" />
-              </motion.div>
-            ) : (
-              <>
-                <Save className="w-5 h-5" />
-                Save Mood
-              </>
-            )}
-          </button>
-        </motion.div>
-      </div>
+                {isSaving ? (
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                  >
+                    <Save className="w-5 h-5" />
+                  </motion.div>
+                ) : (
+                  <>
+                    <Save className="w-5 h-5" />
+                    Save Mood
+                  </>
+                )}
+              </button>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

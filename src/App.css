@@ -213,3 +213,35 @@
 html {
   font-size: var(--font-size);
 }
+
+/* ===== Dark Mode Base Styles ===== */
+html.dark {
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+}
+
+/* Dark Mode for common elements */
+html.dark .bg-white {
+  background-color: #2c2c2c !important;
+}
+
+html.dark .text-gray-600,
+html.dark .text-gray-700,
+html.dark .text-gray-800 {
+  color: #e0e0e0 !important;
+}
+
+html.dark input {
+  background-color: #333 !important;
+  color: #fff !important;
+  border-color: #555 !important;
+}
+
+html.dark button {
+  background-color: #444;
+  color: #fff;
+}
+
+html.dark .shadow-xl {
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
