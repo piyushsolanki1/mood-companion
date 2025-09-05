@@ -7,7 +7,7 @@ import Settings from "./Settings";
 const Home = () => {
   const [mood, setMood] = useState("😐 Neutral");
   const navigate = useNavigate();
-  const [displayName, setDisplayName] = useState("Fella"); 
+  const [displayName, setDisplayName] = useState("Hey Fella"); 
 
   useEffect(() => {
     const savedName = localStorage.getItem("displayName");
