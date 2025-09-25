@@ -60,6 +60,7 @@ const Home = () => {
         <div className="flex justify-center mt-2">
           <button
             className="rounded-lg px-5 py-2 bg-transparent text-gray-600 hover:bg-gray-100 transition text-sm md:text-base border border-gray-300"
+            
             onClick={() => navigate("/log")}
           >
             Add Details & Note

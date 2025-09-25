@@ -10,7 +10,7 @@ const Navigation = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 hover:bg-gray-200 rounded-xl p-1 ${
+              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 rounded-xl p-1 ${
                 isActive ? "text-blue-500" : "text-gray-500"
               }`
             }
@@ -25,7 +25,7 @@ const Navigation = () => {
           <NavLink
             to="/boost"
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 hover:bg-gray-200 rounded-xl p-1 ${
+              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 rounded-xl p-1 ${
                 isActive ? "text-blue-500" : "text-gray-500"
               }`
             }
@@ -40,7 +40,7 @@ const Navigation = () => {
           <NavLink
             to="/log"
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 hover:bg-gray-200 rounded-xl p-1 ${
+              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 rounded-xl p-1 ${
                 isActive ? "text-blue-500" : "text-gray-500"
               }`
             }
@@ -55,7 +55,7 @@ const Navigation = () => {
           <NavLink
             to="/history"
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 hover:bg-gray-200 rounded-xl p-1 ${
+              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 rounded-xl p-1 ${
                 isActive ? "text-blue-500" : "text-gray-500"
               }`
             }
@@ -72,7 +72,7 @@ const Navigation = () => {
           <NavLink
             to="/settings"
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 hover:bg-gray-200 rounded-xl p-1 ${
+              `flex flex-col items-center text-xs sm:text-sm transition-colors duration-400 ease-in-out hover:scale-105 rounded-xl p-1 ${
                 isActive ? "text-blue-500" : "text-gray-500"
               }`
             }

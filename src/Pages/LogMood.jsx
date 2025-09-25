@@ -64,9 +64,9 @@ const LogMood = () => {
   return (
     <div className="p-4 md:p-6 lg:p-8 max-w-3xl mx-auto space-y-6 min-h-screen bg-white">
       {/* Header */}
-      <div className="flex items-center text-gray-600">
+      <div className="flex items-center text-accent-foreground">
         <button
-          className="pr-4"
+          className="pr-4 rounded-2xl bg-transparent hover:bg-gray-200 p-1"
           onClick={() => navigate(-1)} // Go back
           aria-label="Go Back"
         >
@@ -95,7 +95,7 @@ const LogMood = () => {
               className={`flex flex-col items-center justify-center p-3 sm:p-4 rounded-full contain-content transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 ${
                 selectedMood === mood.value
                   ? "bg-purple-100 border-2 border-purple-400"
-                  : "bg-gray-50 hover:bg-gray-100"
+                  : "bg-gray-100 hover:bg-gray-300"
               }`}
               whileTap={{ scale: 0.9 }}
             >
@@ -116,7 +116,7 @@ const LogMood = () => {
           <>
             {/* Prompt + Textarea */}
             <motion.div
-              className="bg-gray-50 shadow-md rounded-2xl p-6"
+              className="bg-white shadow-md rounded-2xl p-6"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
@@ -134,7 +134,7 @@ const LogMood = () => {
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 placeholder="Write about your day..."
-                className="text-gray-500 w-full p-3 border-2 rounded-xl focus:ring-2 focus:ring-purple-400 resize-none min-h-[120px]"
+                className="text-accent-foreground w-full p-3 border-2 rounded-xl focus:ring-2 focus:ring-purple-400 resize-none min-h-[120px]"
               />
             </motion.div>
 
@@ -160,7 +160,7 @@ const LogMood = () => {
                     animate={{ rotate: 360 }}
                     transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                   >
-                    <Save className="w-5 h-5" />
+                    <Save className="w-5 h-5 " />
                   </motion.div>
                 ) : (
                   <>

@@ -72,7 +72,7 @@ const Boost = () => {
       {/* Header */}
       <div className="flex items-center text-gray-600">
         <button
-          className="pr-4"
+          className="pr-4 rounded-2xl bg-transparent hover:bg-gray-200 p-1"
           onClick={() => window.history.back()}
           aria-label="Go Back"
         >
@@ -85,7 +85,7 @@ const Boost = () => {
       </div>
 
       {/* Intro Card */}
-      <div className="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-2xl shadow-lg text-center">
+      <div className="bg-white p-6 rounded-2xl shadow-lg text-center">
         <h1 className="text-lg md:text-xl font-medium text-gray-700 mb-2">
           Feeling good? Let's make it even better! ✨
         </h1>
@@ -95,9 +95,9 @@ const Boost = () => {
       </div>
 
       {/* Motivational Quote */}
-      <div className="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-2xl shadow-lg text-center">
+      <div className="bg-white p-6 rounded-2xl shadow-lg text-center">
         {loading ? (
-          <p className="text-gray-500 animate-pulse">Loading a motivational quote...</p>
+          <p className="text-accent-foreground animate-pulse">Loading a motivational quote...</p>
         ) : (
           <>
             <p className="text-lg md:text-xl font-medium text-gray-700 mb-2">
@@ -126,9 +126,9 @@ const Boost = () => {
   
   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
     {/* 4-7-8 Breathing */}
-    <div className="p-4 border rounded-2xl bg-gray-50 shadow-sm">
+    <div className="p-4 border rounded-2xl bg-white shadow-sm">
       <h3 className="text-md font-semibold text-gray-700 mb-2 flex content-start">4-7-8 Breathing</h3>
-      <ul className="text-sm text-gray-600 space-y-1 text-left">
+      <ul className="text-sm text-accent-foreground space-y-1 text-left">
         <li>1. Inhale for 4 counts</li>
         <li>2. Hold for 7 counts</li>
         <li>3. Exhale for 8 counts</li>
@@ -137,7 +137,7 @@ const Boost = () => {
     </div>
 
     {/* Box Breathing */}
-    <div className="p-4 border rounded-2xl bg-gray-50 shadow-sm">
+    <div className="p-4 border rounded-2xl bg-white shadow-sm">
       <h3 className="text-md font-semibold text-gray-700 mb-2 flex content-start">Box Breathing</h3>
       <ul className="text-sm text-gray-600 space-y-1 text-left">
         <li>1. Inhale for 4 counts</li>
@@ -149,9 +149,9 @@ const Boost = () => {
     </div>
 
     {/* Mindful Breathing */}
-    <div className="p-4 border rounded-2xl bg-gray-50 shadow-sm">
+    <div className="p-4 border rounded-2xl bg-white shadow-sm">
       <h3 className="text-md font-semibold text-gray-700 mb-2 flex content-start">Mindful Breathing</h3>
-      <ul className="text-sm text-gray-600 space-y-1 text-left">
+      <ul className="text-sm text-accent-foreground space-y-1 text-left">
         <li>1. Inhale slowly for 4 counts</li>
         <li>2. Exhale slowly for 6 counts</li>
         <li>3. Repeat mindfully</li>
@@ -170,7 +170,7 @@ const Boost = () => {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <button
-            className="flex flex-col items-center justify-center p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition shadow bg-blue-500  delay-90 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 "
+            className="flex flex-col items-center justify-center p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition shadow delay-90 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 "
             onClick={() => window.open("https://www.youtube.com/podcasts", "_blank")}
           >
             <PlayCircle className="w-8 h-8 text-yellow-500 mb-2" />

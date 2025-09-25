@@ -70,7 +70,7 @@ const History = () => {
       {/* Header */}
       <div className="flex items-center text-gray-600">
         <button
-          className="pr-4"
+          className="pr-4 rounded-2xl bg-transparent hover:bg-gray-200 p-1"
           onClick={() => window.history.back()}
           aria-label="Go Back"
         >

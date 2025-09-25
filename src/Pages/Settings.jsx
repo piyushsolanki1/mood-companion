@@ -69,7 +69,7 @@ const Settings = () => {
       {/* Header */}
       <div className="flex items-center text-gray-600">
         <button
-          className="pr-4"
+          className="pr-4 rounded-2xl bg-transparent hover:bg-gray-200 p-1"
           onClick={() => window.history.back()}
           aria-label="Go Back"
         >
@@ -97,11 +97,7 @@ const Settings = () => {
             />
             <button
               onClick={handleSave}
-              className={`border rounded-lg p-2 text-white transition duration-300 ${
-                isSaving
-                  ? "bg-purple-400 cursor-not-allowed"
-                  : "bg-purple-500 hover:bg-purple-600"
-              }`}
+              className={`border rounded-lg p-2 text-white transition duration-300 bg-purple-500 hover:bg-purple-600`}
             >
               {isSaving ? "Saving..." : "Save"}
             </button>
