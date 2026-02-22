@@ -95,7 +95,7 @@ const History = () => {
               <button
                 key={option}
                 onClick={() => setFilter(option)}
-                className={`text-xs border rounded-lg py-1 px-2 ${
+                className={`text-xs border rounded-lg py-1 px-2 cursor-pointer ${
                   filter === option
                     ? "bg-purple-100 border-purple-400"
                     : "hover:bg-gray-100"
